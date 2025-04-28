@@ -1,0 +1,56 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "isSequential": true,
+          "items": {
+            "value": "@range(2006, 18)",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "InvokePipeline",
+              "typeProperties": {
+                "parameters": {
+                  "year": {
+                    "value": "@item()",
+                    "type": "Expression"
+                  },
+                  "apikey": {
+                    "value": "@pipeline().parameters.apikey",
+                    "type": "Expression"
+                  }
+                },
+                "waitOnCompletion": true,
+                "workspaceId": "00000000-0000-0000-0000-000000000000",
+                "pipelineId": "3223ca64-735c-b43f-4d1b-669c181e7628",
+                "operationType": "InvokeFabricPipeline"
+              },
+              "externalReferences": {
+                "connection": "a50698b2-f577-4d21-8789-5beb581bf301"
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Invoke Inget pipeline",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "ForEach Year",
+        "dependsOn": []
+      }
+    ],
+    "parameters": {
+      "apikey": {
+        "type": "string"
+      }
+    }
+  }
+}

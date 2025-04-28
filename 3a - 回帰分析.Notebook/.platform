@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "3a - 回帰分析",
+    "description": "LightGBM による回帰モデルの作成と評価"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "9f9f4c16-7483-9a89-4679-59906756320a"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "1 - Execute Ingestion for Each Year",
+    "description": "Area ごとにデータを取得するパイプラインを、Year ごとに実行する"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e5f44bd3-1e1f-a63f-4c49-55833b44f5d3"
+  }
+}

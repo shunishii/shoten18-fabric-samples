@@ -1,0 +1,70 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {},
+  "name": "",
+  "queryGroups": [
+    {
+      "id": "967d9432-d03e-4f6a-9996-955272fc0351",
+      "name": "raw からのファイルの変換"
+    },
+    {
+      "id": "17f152c1-dfd5-4835-a8e5-768038bfe819",
+      "name": "ヘルパー クエリ",
+      "parentId": "967d9432-d03e-4f6a-9996-955272fc0351"
+    }
+  ],
+  "documentLocale": "ja-JP",
+  "queriesMetadata": {
+    "CombineAll": {
+      "queryId": "a539307f-5bec-490d-abf9-e374b4dd2ae0",
+      "queryName": "CombineAll"
+    },
+    "サンプル ファイル": {
+      "queryId": "871d3ce4-cec1-433b-b300-cc944902185b",
+      "queryName": "サンプル ファイル",
+      "queryGroupId": "17f152c1-dfd5-4835-a8e5-768038bfe819",
+      "loadEnabled": false
+    },
+    "パラメーター": {
+      "queryId": "64efeebe-6187-4f12-b420-2df943dc8ccc",
+      "queryName": "パラメーター",
+      "queryGroupId": "17f152c1-dfd5-4835-a8e5-768038bfe819",
+      "loadEnabled": false
+    },
+    "サンプル ファイル の変換": {
+      "queryId": "6c0a52a6-5e67-461d-9917-3c614f2bd4be",
+      "queryName": "サンプル ファイル の変換",
+      "queryGroupId": "967d9432-d03e-4f6a-9996-955272fc0351",
+      "loadEnabled": false
+    },
+    "ファイルの変換": {
+      "queryId": "a990096e-277f-41cd-b312-e2d9211ad8bb",
+      "queryName": "ファイルの変換",
+      "queryGroupId": "17f152c1-dfd5-4835-a8e5-768038bfe819",
+      "loadEnabled": false
+    },
+    "workspace_id": {
+      "queryId": "150cb34f-de6f-40d3-a49d-18426e61c8f5",
+      "queryName": "workspace_id",
+      "loadEnabled": false
+    },
+    "lakehouse_id": {
+      "queryId": "b79d2fbc-35eb-47a2-8f42-b7a9ab23b738",
+      "queryName": "lakehouse_id",
+      "loadEnabled": false
+    },
+    "CombineAll_DataDestination": {
+      "queryId": "a5d22de2-9014-445e-8c2c-388e1f701b55",
+      "queryName": "CombineAll_DataDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"fe78e78c-6512-443a-9fb5-e0121e0d8c27\",\"DatasourceId\":\"5fc93925-19c6-4dd0-8df7-161f1e8822cd\"}"
+    }
+  ]
+}

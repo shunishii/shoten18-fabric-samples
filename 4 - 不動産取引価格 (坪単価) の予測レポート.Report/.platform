@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "4 - 不動産取引価格 (坪単価) の予測レポート"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "52bc8051-e39d-b911-482c-3cf92e9866b8"
+  }
+}

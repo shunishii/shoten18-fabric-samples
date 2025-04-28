@@ -1,0 +1,118 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "items": {
+            "value": "@range(1,47)",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "Copy",
+              "typeProperties": {
+                "source": {
+                  "type": "JsonSource",
+                  "formatSettings": {
+                    "type": "JsonReadSettings"
+                  },
+                  "storeSettings": {
+                    "type": "HttpReadSettings",
+                    "requestMethod": "GET",
+                    "additionalHeaders": {
+                      "value": "@concat('Ocp-Apim-Subscription-Key: ', pipeline().parameters.apikey)",
+                      "type": "Expression"
+                    }
+                  },
+                  "datasetSettings": {
+                    "type": "Json",
+                    "typeProperties": {
+                      "location": {
+                        "type": "HttpServerLocation",
+                        "relativeUrl": {
+                          "value": "@concat('?year=', string(pipeline().parameters.year), '&area=', if(less(length(string(item())), 2), '0', ''), string(item()))",
+                          "type": "Expression"
+                        }
+                      },
+                      "compression": {
+                        "type": "gzip"
+                      }
+                    },
+                    "schema": {},
+                    "externalReferences": {
+                      "connection": "4d2933c4-f230-45c9-8e5d-f68e079592eb"
+                    },
+                    "annotations": []
+                  }
+                },
+                "sink": {
+                  "type": "JsonSink",
+                  "formatSettings": {
+                    "type": "JsonWriteSettings"
+                  },
+                  "storeSettings": {
+                    "type": "LakehouseWriteSettings"
+                  },
+                  "datasetSettings": {
+                    "type": "Json",
+                    "typeProperties": {
+                      "location": {
+                        "type": "LakehouseLocation",
+                        "folderPath": {
+                          "value": "@concat('raw/year=', string(pipeline().parameters.year))",
+                          "type": "Expression"
+                        },
+                        "fileName": {
+                          "value": "@concat('area=',string(item()), '.json')",
+                          "type": "Expression"
+                        }
+                      }
+                    },
+                    "schema": {},
+                    "linkedService": {
+                      "name": "RealEstate",
+                      "properties": {
+                        "type": "Lakehouse",
+                        "typeProperties": {
+                          "artifactId": "9a3f94c2-1db1-943d-4286-42cde0e959fc",
+                          "workspaceId": "00000000-0000-0000-0000-000000000000",
+                          "rootFolder": "Files"
+                        },
+                        "annotations": []
+                      }
+                    },
+                    "annotations": []
+                  }
+                },
+                "enableStaging": false,
+                "enableSkipIncompatibleRow": false
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Get Real Estate Price",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "ForEach Area",
+        "dependsOn": []
+      }
+    ],
+    "parameters": {
+      "year": {
+        "type": "int",
+        "defaultValue": 2024
+      },
+      "apikey": {
+        "type": "string",
+        "defaultValue": "YOUR_API_KEY"
+      }
+    }
+  }
+}
