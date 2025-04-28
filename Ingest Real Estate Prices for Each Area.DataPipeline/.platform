@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "Ingest Real Estate Prices for Each Area"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "3223ca64-735c-b43f-4d1b-669c181e7628"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "3b - 時系列分析",
+    "description": "時系列モデルの作成と予測結果の出力"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2046e239-24eb-8592-4539-b866f8840ea4"
+  }
+}
