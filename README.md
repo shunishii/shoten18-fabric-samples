@@ -1,8 +1,8 @@
 # shoten18-fabric-samples
-技術書典18で出版している Fabric サンプルコードの配布用リポジトリ
+技術書典18で出版している Microsoft Fabric サンプルコードの配布用リポジトリ
 
-##
+## 使い方
 
-本リポジトリでは、変数ライブラリを使用して環境ごとの接続情報などを管理しています。
-変数ライブラリの使い方は、こちらをご確認ください。
-https://learn.microsoft.com/ja-jp/fabric/cicd/variable-library/get-started-variable-libraries?tabs=home-page
+Microsoft Fabric のワークスペースで Git 統合を行ってください。
+
+https://learn.microsoft.com/ja-jp/fabric/cicd/git-integration/git-get-started?tabs=github%2CAzure%2Ccommit-to-git
